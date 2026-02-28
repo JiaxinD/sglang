@@ -1,0 +1,13 @@
+# .github/linters/lychee.toml
+no_progress = true
+verbose = "warn"
+timeout = 20
+max_concurrency = 8
+
+offline = true
+
+exclude = [
+  "http://localhost",
+  "https://localhost",
+  "http://127.0.0.1",
+]
