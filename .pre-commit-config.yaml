@@ -87,6 +87,7 @@ repos:
       - id: lychee
         name: check doc links (offline)
         args: ["--config", ".github/linters/lychee.toml"]
+        exclude: ^docs/_build/
         files: |
           (?x)^(
             README\.md|

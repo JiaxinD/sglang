@@ -1,12 +1,14 @@
-# .github/linters/lychee.toml
 no_progress = true
 verbose = "warn"
 timeout = 20
 max_concurrency = 8
+retry_wait_time = 2
+max_retries = 2
 
-offline = true
+# CI should validate external links over the network.
+offline = false
+scheme = ["http", "https"]
 
-# Ignore generated docs output; check source docs only.
 exclude_path = [
   "^docs/_build/",
 ]
