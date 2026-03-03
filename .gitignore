@@ -249,6 +249,7 @@ lmms-eval
 **/.serena/
 ctags/
 outputs/
+inputs/
 
 # Eval Cache
 .longbench_cache/
@@ -271,3 +272,9 @@ sgl-kernel/csrc/**/*_musa/
 
 # MUSA core dump files
 *.mudmp
+
+# Others
+# diffusion 3D outputs
+*.glb
+*.ply
+*.npz
