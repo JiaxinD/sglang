@@ -14,15 +14,5 @@ exclude_path = [
 exclude = [
   "^https?://localhost(:[0-9]+)?(/|$)",
   "^http://127\\.0\\.0\\.1(:[0-9]+)?(/|$)",
-  # External sites that commonly block CI user agents.
-  "^https://www\\.intel\\.com/content/www/us/en/ark/products/series/240391/intel-arc-b-series-graphics\\.html$",
-  "^https://www\\.intel\\.com/content/www/us/en/ark/products/series/242616/intel-arc-pro-b-series-graphics\\.html$",
-  "^https://www\\.intel\\.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications\\.html$",
-  "^https://huggingface\\.co/nunchaku-ai/nunchaku-flux$",
   "^http://0\\.0\\.0\\.0(/|$)",
-  "^https://platform\\.openai\\.com/docs/",
-  "^https://gamma\\.app/docs/Optimizing-RL-with-SGLang-y0kqgj877k34779$",
-  "^https://huggingface\\.co/",
-  "^https://github\\.com/sgl-project/sglang/blob/main/examples/assets/example_image\\.png\\?raw=true\\\\$",
-  "^https://raw\\.githubusercontent\\.com/sgl-project/sglang/main/assets/logo\\.png/$",
 ]
