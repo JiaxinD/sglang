@@ -170,6 +170,7 @@ cython_debug/
 
 # Documentation
 docs/_build
+docs/lychee-link-fix-details.md
 
 # SGL
 benchmark/mmlu/data

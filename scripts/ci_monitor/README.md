@@ -175,7 +175,7 @@ All three workflows are analyzed together, with runner statistics tracked separa
 
 #### Slack Notifications
 
-The Failures Analyzer can send condensed alerts to Slack. See [SLACK_SETUP.md](SLACK_SETUP.md) for complete setup instructions.
+The Failures Analyzer can send condensed alerts to Slack. See the "Slack Notifications" section below for setup and usage examples.
 
 **What gets sent:**
 - Top 3 jobs with consecutive failures

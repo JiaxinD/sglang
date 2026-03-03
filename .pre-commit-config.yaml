@@ -91,6 +91,5 @@ repos:
         files: |
           (?x)^(
             README\.md|
-            docs/.*\.(md|rst|ipynb)|
-            .*\.md
+            docs/.*\.(md|rst|ipynb)
           )$

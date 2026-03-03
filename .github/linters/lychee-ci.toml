@@ -10,11 +10,38 @@ offline = false
 scheme = ["http", "https"]
 
 exclude_path = [
-  "^docs/_build/",
+  # Exclude generated Sphinx build artifacts.
+  # - "(\\./)?" allows both "docs/..." and "./docs/..."
+  # - "[/\\\\]" supports both slash styles in CI environments
+  "^(\\./)?docs[/\\\\]_build[/\\\\]",
 ]
 
 exclude = [
-  "http://localhost",
-  "https://localhost",
-  "http://127.0.0.1",
+  # Local-only endpoints referenced in docs/examples.
+  # These are expected to be unreachable in GitHub-hosted CI.
+  "^https?://localhost(:[0-9]+)?(/|$)",
+  "^http://127\\.0\\.0\\.1(:[0-9]+)?(/|$)",
+  # Vendor pages that frequently block/deny CI user-agents (transient 403/anti-bot).
+  "^https://www\\.intel\\.com/content/www/us/en/ark/products/series/240391/intel-arc-b-series-graphics\\.html$",
+  "^https://www\\.intel\\.com/content/www/us/en/ark/products/series/242616/intel-arc-pro-b-series-graphics\\.html$",
+  "^https://www\\.intel\\.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications\\.html$",
+
+  # Known auth-gated or unstable public endpoint.
+  "^https://huggingface\\.co/nunchaku-ai/nunchaku-flux$",
+
+  # Non-routable bind address used in examples, never externally reachable.
+  "^http://0\\.0\\.0\\.0(/|$)",
+
+  # Large doc portals with anti-bot/rate-limit behavior in CI.
+  # We keep API docs references in content but do not fail CI on access policy.
+  "^https://platform\\.openai\\.com/docs/",
+  "^https://gamma\\.app/docs/Optimizing-RL-with-SGLang-y0kqgj877k34779$",
+
+  # Broad HF exclusion to avoid frequent 429 throttling in CI.
+  # Link correctness for Hugging Face URLs is still reviewed in code/doc review.
+  "^https://huggingface\\.co/",
+
+  # Known noisy image URLs used in notebook-rendered examples.
+  "^https://github\\.com/sgl-project/sglang/blob/main/examples/assets/example_image\\.png\\?raw=true\\\\$",
+  "^https://raw\\.githubusercontent\\.com/sgl-project/sglang/main/assets/logo\\.png/$",
 ]
