@@ -25,17 +25,6 @@ jobs:
       - name: Run pre-commit checks
         run: SKIP=no-commit-to-branch pre-commit run --all-files --show-diff-on-failure
 
-      - name: Run lychee online link checks
-        uses: lycheeverse/lychee-action@v2
-        with:
-          fail: true
-          args: >-
-            --config .github/linters/lychee-ci.toml
-            README.md
-            docs/**/*.md
-            docs/**/*.rst
-            docs/**/*.ipynb
-
       - name: Run sgl-kernel clang-format checks
         uses: DoozyX/clang-format-lint-action@v0.20
         with:

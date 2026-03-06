@@ -26,9 +26,6 @@ exclude = [
   "^https://www\\.intel\\.com/content/www/us/en/ark/products/series/242616/intel-arc-pro-b-series-graphics\\.html$",
   "^https://www\\.intel\\.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications\\.html$",
 
-  # Known auth-gated or unstable public endpoint.
-  "^https://huggingface\\.co/nunchaku-ai/nunchaku-flux$",
-
   # Non-routable bind address used in examples, never externally reachable.
   "^http://0\\.0\\.0\\.0(/|$)",
 
@@ -36,10 +33,6 @@ exclude = [
   # We keep API docs references in content but do not fail CI on access policy.
   "^https://platform\\.openai\\.com/docs/",
   "^https://gamma\\.app/docs/Optimizing-RL-with-SGLang-y0kqgj877k34779$",
-
-  # Broad HF exclusion to avoid frequent 429 throttling in CI.
-  # Link correctness for Hugging Face URLs is still reviewed in code/doc review.
-  "^https://huggingface\\.co/",
 
   # Known noisy image URLs used in notebook-rendered examples.
   "^https://github\\.com/sgl-project/sglang/blob/main/examples/assets/example_image\\.png\\?raw=true\\\\$",

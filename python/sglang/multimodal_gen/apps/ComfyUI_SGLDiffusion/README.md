@@ -4,7 +4,7 @@ A ComfyUI plugin for integrating with SGLang Diffusion server, supporting image 
 
 ## Installation
 
-1. **Install SGLang**: Follow the [Installation Guide](../../docs/installation.md) to install `sglang[diffusion]`.
+1. **Install SGLang**: Follow the [Installation Guide](../../../../../docs/diffusion/installation.md) to install `sglang[diffusion]`.
 2. **Install Plugin**: Copy this entire directory (`ComfyUI_SGLDiffusion`) to your ComfyUI `custom_nodes/` folder.
 3. **Restart ComfyUI**: Restart ComfyUI to load the plugin.
 
@@ -13,11 +13,13 @@ A ComfyUI plugin for integrating with SGLang Diffusion server, supporting image 
 The plugin supports two modes of operation: **Server Mode** (via HTTP API) and **Integrated Mode** (tight integration with ComfyUI).
 
 ### Supported Models
+
 - **Z-Image**: High-speed image generation models (e.g., `Z-Image-Turbo`)
 - **FLUX**: State-of-the-art text-to-image models (e.g., `FLUX.1-dev`)
-- **Qwen-Image**: Multi-modal image generation models (e.g., `Qwen-Image`,`Qwen-Image-2512`). *Note: Image editing support is currently experimental and may have some issues.*
+- **Qwen-Image**: Multi-modal image generation models (e.g., `Qwen-Image`,`Qwen-Image-2512`). _Note: Image editing support is currently experimental and may have some issues._
 
 ### Mode 1: Server Mode (HTTP API)
+
 Connect to a standalone SGLang Diffusion server.
 
 1. **Start SGLang Diffusion Server**: Ensure the server is running and accessible.
@@ -28,6 +30,7 @@ Connect to a standalone SGLang Diffusion server.
 4. **LoRA Support**: Use `SGLDiffusion Server Set LoRA` and `SGLDiffusion Server Unset LoRA`.
 
 ### Mode 2: Integrated Mode (Tight Integration)
+
 Leverage SGLang's high-performance sampling directly within ComfyUI while using ComfyUI's front-end nodes (CLIP, VAE, etc.).
 
 1. **Load Model**: Use the `SGLDiffusion UNET Loader` node to load your diffusion model.
@@ -48,11 +51,11 @@ Reference workflow files are provided in the `workflows/` directory:
 For other workflows supporting the models, you can easily use SGLang by replacing the official `UNET Loader` node with the `SGLDUNETLoader` node. Similarly, for LoRA support, replace the official LoRA loader with the `SGLDiffusion LoRA Loader`.
 
 To use these workflows:
+
 1. Open ComfyUI.
 2. Load the workflow JSON file from the `workflows/` directory.
 3. Adjust the parameters and model paths as needed.
 4. Run the workflow.
-
 
 ## Current Implementation
 
