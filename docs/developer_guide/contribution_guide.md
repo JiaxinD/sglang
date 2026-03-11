@@ -29,7 +29,7 @@ pre-commit run --all-files
 - **`pre-commit run --all-files`** manually runs all configured checks, applying fixes if possible. If it fails the first time, re-run it to ensure lint errors are fully resolved. Make sure your code passes all checks **before** creating a Pull Request.
 - **Do not commit** directly to the `main` branch. Always create a new branch (e.g., `feature/my-new-feature`), push your changes, and open a PR from that branch.
 - Link checking with lychee is **enforced in CI**. By default, it is not blocking local commits.
-- To run local link checks manually, use: `pre-commit run lychee --all-files`.
+- To run local link checks manually, use: `pre-commit run --hook-stage manual lychee --all-files`.
 
 ### Link check guidance (lychee)
 
@@ -39,10 +39,10 @@ pre-commit run --all-files
 
 ```bash
 # Fast local/offline check (pre-commit config)
-pre-commit run lychee --all-files
+pre-commit run --hook-stage manual lychee --all-files
 
 # CI-like online check (external links over network)
-lychee --config .github/linters/lychee-ci.toml README.md "docs/**/*.md" "docs/**/*.rst" "docs/**/*.ipynb"
+python .github/linters/run_lychee.py --config .github/linters/lychee-ci.toml README.md docs/**/*.md docs/**/*.rst docs/**/*.ipynb
 ```
 
 ## Run and add unit tests
