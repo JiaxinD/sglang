@@ -1,0 +1,30 @@
+name: Nightly Link Check
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: nightly-link-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lychee-online:
+    if: github.repository == 'sgl-project/sglang'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run lychee online link checks
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --config .github/linters/lychee-ci.toml
+            README.md
+            docs/**/*.md
+            docs/**/*.rst
+            docs/**/*.ipynb
