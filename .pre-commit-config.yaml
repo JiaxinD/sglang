@@ -81,12 +81,12 @@ repos:
         language: system
         files: ^\.github/CI_PERMISSIONS\.json$
         pass_filenames: false
-  - repo: https://github.com/lycheeverse/lychee.git
-    rev: lychee-v0.22.0
+  - repo: local
     hooks:
       - id: lychee
         name: check doc links (offline)
-        args: ["--config", ".github/linters/lychee.toml"]
+        entry: python .github/linters/run_lychee.py --config .github/linters/lychee.toml
+        language: python
         exclude: ^docs/_build/
         files: |
           (?x)^(
