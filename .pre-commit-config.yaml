@@ -87,6 +87,7 @@ repos:
         name: check doc links (offline)
         entry: python .github/linters/run_lychee.py --config .github/linters/lychee.toml
         language: python
+        stages: [manual]
         exclude: ^docs/_build/
         files: |
           (?x)^(
