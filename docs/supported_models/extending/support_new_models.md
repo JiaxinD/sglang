@@ -55,7 +55,7 @@ should give the same text output and very similar prefill logits:
 
 - Get the reference output:
   ```bash
-  python3 scripts/playground/reference_hf.py --model-path [new model] --model-type {text,mllm}
+  python3 scripts/playground/reference_hf.py --model-path [new model] --model-type {text,vlm}
   ```
 - Get the SGLang output:
   ```bash
