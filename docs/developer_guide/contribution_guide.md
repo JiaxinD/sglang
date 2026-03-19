@@ -42,7 +42,7 @@ pre-commit run --all-files
 pre-commit run --hook-stage manual lychee --all-files
 
 # CI-like online check (external links over network)
-python .github/linters/run_lychee.py --config .github/linters/lychee-ci.toml README.md docs/**/*.md docs/**/*.rst docs/**/*.ipynb
+lychee --config .github/linters/lychee-ci.toml README.md "docs/**/*.md" "docs/**/*.rst" "docs/**/*.ipynb"
 ```
 
 ## Run and add unit tests

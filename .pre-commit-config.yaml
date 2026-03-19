@@ -51,20 +51,20 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
-        args: ["--config", ".codespellrc"]
+        args: ['--config', '.codespellrc']
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v20.1.7
     hooks:
-      - id: clang-format
-        types_or: [c++, cuda]
-        args: [--style=file, --verbose]
+    - id: clang-format
+      types_or: [c++, cuda]
+      args: [--style=file, --verbose]
   - repo: https://github.com/kynan/nbstripout
     rev: 0.9.0
     hooks:
       - id: nbstripout
         args:
-          - "--keep-output"
-          - "--extra-keys=metadata.kernelspec metadata.language_info.version"
+          - '--keep-output'
+          - '--extra-keys=metadata.kernelspec metadata.language_info.version'
   - repo: local
     hooks:
       - id: check-chinese-characters
@@ -81,12 +81,12 @@ repos:
         language: system
         files: ^\.github/CI_PERMISSIONS\.json$
         pass_filenames: false
-  - repo: local
+  - repo: https://github.com/lycheeverse/lychee.git
+    rev: lychee-v0.22.0
     hooks:
       - id: lychee
         name: check doc links (offline)
-        entry: python .github/linters/run_lychee.py --config .github/linters/lychee.toml
-        language: python
+        args: ["--config", ".github/linters/lychee.toml"]
         stages: [manual]
         exclude: ^docs/_build/
         files: |
