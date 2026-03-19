@@ -33,8 +33,10 @@ exclude = [
   # We keep API docs references in content but do not fail CI on access policy.
   "^https://platform\\.openai\\.com/docs/",
   "^https://gamma\\.app/docs/Optimizing-RL-with-SGLang-y0kqgj877k34779$",
+  "^https://aflah02\\.substack\\.com/p/multi-node-llm-inference-with-sglang/?$",
 
   # Known noisy image URLs used in notebook-rendered examples.
   "^https://github\\.com/sgl-project/sglang/blob/main/examples/assets/example_image\\.png\\?raw=true\\\\$",
+  "^https://raw\\.githubusercontent\\.com/sgl-project/sglang/main/examples/assets/example_image\\.png/?$",
   "^https://raw\\.githubusercontent\\.com/sgl-project/sglang/main/assets/logo\\.png/$",
 ]
