@@ -43,12 +43,12 @@ The GitHub token needs `repo` and `workflow` scopes to read CI run data; otherwi
 
 ### Failures Analyzer parameters
 
-| Parameter     | Default  | Description                              |
-| ------------- | -------- | ---------------------------------------- |
-| `--token`     | Required | GitHub Personal Access Token             |
-| `--limit`     | 500      | Number of workflow runs to analyze       |
-| `--threshold` | 3        | Alert threshold for consecutive failures |
-| `--output`    | None     | Output JSON file (optional)              |
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `--token` | Required | GitHub Personal Access Token |
+| `--limit` | 500 | Number of workflow runs to analyze |
+| `--threshold` | 3 | Alert threshold for consecutive failures |
+| `--output` | None | Output JSON file (optional) |
 
 ## Historical note
 

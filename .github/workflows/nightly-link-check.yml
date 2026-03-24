@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run lychee online link checks
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2
         with:
           fail: true
           args: >-
@@ -28,3 +28,5 @@ jobs:
             docs/**/*.md
             docs/**/*.rst
             docs/**/*.ipynb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
